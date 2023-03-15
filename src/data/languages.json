@@ -1,0 +1,22 @@
+[
+    {
+        "id": "1",
+        "name": "Español",
+        "code": "es-MX"
+    },
+    {
+        "id": "2",
+        "name": "English",
+        "code": "en-US"
+    },
+    {
+        "id": "3",
+        "name": "Français",
+        "code": "fr-FR"
+    },
+    {
+        "id": "4",
+        "name": "Italiano",
+        "code": "it-IT"
+    }
+]
