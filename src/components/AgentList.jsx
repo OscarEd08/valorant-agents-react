@@ -34,10 +34,10 @@ function AgentList(){
         
     
     return(
-        <div className='dark:bg-background dark:text-text'>
+        <div className='dark:bg-background dark:text-text w-fit'>
             <Navbar setLanguage={changeLanguage} setSelectedRole={setSelectedRole} searchAgent={searchAgent} setSearchAgent={handleSearch}/>        
             <Filter agents={agents} selectedRole={selectedRole} setSelectedRole={setSelectedRole} language={language}/>
-            <div className='grid grid-cols-3 gap-11 mx-11 mt-14'>
+            <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-11 mx-11 mt-14'>
             {                
                 filteredAgents.map( agent => {                    
                     return(

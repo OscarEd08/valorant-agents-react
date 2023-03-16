@@ -11,14 +11,14 @@ function Filter(props) {
   .filter((name, index, arr) => arr.indexOf(name) === index);
   
   return (
-    <div className="flex flex-row justify-center gap-40 my-11">
+    <div className="flex flex-row justify-center my-11 gap-3 sm:gap-8 lg:gap-10 xl:gap-28 2xl:gap-40">
       {nameRoles.map((role, index) => (
         <button key={index} onClick={() => handleRoleSelect(role)} 
-        className={`px-10 py-2 font-semibold rounded-full border hover:text-white hover:bg-gray-800 dark:text-white dark:hover:bg-gray-900 hover:border-transparent focus:outline-none ${selectedRole === role ? 'bg-gray-800 border-gray-800 text-white dark:bg-gray-900 dark:border-gray-900'  : 'text-gray-800 border-gray-200'}`}>
+        className={`text-xs md:text-base px-3 md:px-5 lg:px-10 font-semibold rounded-full border hover:text-white hover:bg-gray-800 dark:text-white dark:hover:bg-gray-900 hover:border-transparent focus:outline-none ${selectedRole === role ? 'bg-gray-800 border-gray-800 text-white dark:bg-gray-900 dark:border-gray-900'  : 'text-gray-800 border-gray-200'}`}>
           {role}
         </button>
       ))}
-      <button onClick={() => handleRoleSelect('')} className={`px-10 py-2 font-semibold rounded-full border hover:border-transparent focus:outline-none ${selectedRole === ''? 'text-white bg-gray-800 border-gray-800 dark:bg-gray-900 dark:border-gray-900' : 'text-gray-800 hover:text-white hover:bg-gray-800 dark:text-white dark:hover:bg-gray-900 ' }`} >
+      <button onClick={() => handleRoleSelect('')} className={`text-xs md:text-base px-3 py-1 sm:py-2 md:px-5 lg:px-10 font-semibold rounded-full border hover:border-transparent focus:outline-none ${selectedRole === ''? 'text-white bg-gray-800 border-gray-800 dark:bg-gray-900 dark:border-gray-900' : 'text-gray-800 hover:text-white hover:bg-gray-800 dark:text-white dark:hover:bg-gray-900 ' }`} >
         All
       </button>
     </div>

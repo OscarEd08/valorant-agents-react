@@ -6,8 +6,8 @@ const {setLanguage, setSelectedRole,searchAgent, setSearchAgent } = props;
 
     return (  
         <div className="flex items-center bg-gray-800 h-28 max-h-full drop-shadow-lg">
-            <div className="flex-none ml-14">
-                <h1 className="text-5xl font-extrabold text-white font-['Roboto']">Valorant's Agents</h1>
+            <div className="flex-none ml-7 lg:ml-10 xl:ml-14">
+                <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-white font-['Roboto']">Valorant's Agents</h1>
             </div>
             <Search searchAgent={searchAgent} setSearchAgent={setSearchAgent}/>         
             <Language setLanguage={setLanguage} setSelectedRole={setSelectedRole}/>        
