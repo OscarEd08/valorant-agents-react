@@ -1,8 +1,8 @@
 import Ability from './Ability';
 
 function Agent({agent}){      
-        return(
-            <div className='card'>
+            return(
+            <div className='card dark:bg-background'>
                 <div className='flex justify-center'>
                     <div className='relative'>
                         <img className='rounded-full h-60 w-60' src={agent.displayIconSmall} alt={agent.displayName}/>                                        

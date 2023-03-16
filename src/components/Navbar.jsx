@@ -10,7 +10,7 @@ const {setLanguage, setSelectedRole,searchAgent, setSearchAgent } = props;
                 <h1 className="text-5xl font-extrabold text-white font-['Roboto']">Valorant's Agents</h1>
             </div>
             <Search searchAgent={searchAgent} setSearchAgent={setSearchAgent}/>         
-            <Language setLanguage={setLanguage} setSelectedRole={setSelectedRole}/>
+            <Language setLanguage={setLanguage} setSelectedRole={setSelectedRole}/>        
         </div>
     );
 }

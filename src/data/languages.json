@@ -19,4 +19,16 @@
         "name": "Italiano",
         "code": "it-IT"
     }
+    ,
+    {
+        "id": "5",
+        "name": "Japan",
+        "code": "ja-JP"
+    }
+    ,
+    {
+        "id": "6",
+        "name": "Arabe",
+        "code": "ar-AE"
+    }
 ]

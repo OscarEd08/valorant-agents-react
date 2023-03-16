@@ -8,7 +8,7 @@ function AbilityList(props) {
                         ability.displayIcon && (
                             <td key={ability.slot} >
                                 <img className={`mx-4 p-1 rounded-full h-16 w-16 
-                                ${ability.slot === "Ultimate" ? "bg-neutral-800" : "invert-[0.85]"}`}
+                                ${ability.slot === "Ultimate" ? "bg-neutral-800 dark:bg-neutral-900" : "invert-[0.85] dark:invert-0"}`}
                                 src={ability.displayIcon} alt={ability.displayName}/>
                             </td>
                         )                                  
@@ -19,7 +19,7 @@ function AbilityList(props) {
                 {props.ability.map(ability => {
                     return (
                         ability.displayIcon && (
-                            <td key={ability.slot} className="pt-2 w-24 text-center text-xs font-bold text-gray-800" >
+                            <td key={ability.slot} className="pt-2 w-24 text-center text-xs font-bold text-gray-800 dark:text-white" >
                                 {ability.displayName}
                             </td>
                         )

@@ -29,15 +29,16 @@ function AgentList(){
             (selectedRole === '' || agent.role.displayName === selectedRole) &&
             agent.displayName.toLowerCase().includes(searchAgent.toLowerCase())
           );
-  });   
+    });   
+
         
     
     return(
-        <div>
+        <div className='dark:bg-background dark:text-text'>
             <Navbar setLanguage={changeLanguage} setSelectedRole={setSelectedRole} searchAgent={searchAgent} setSearchAgent={handleSearch}/>        
             <Filter agents={agents} selectedRole={selectedRole} setSelectedRole={setSelectedRole} language={language}/>
-            <div className='grid grid-cols-3 gap-11 mx-11 my-14'>
-            {
+            <div className='grid grid-cols-3 gap-11 mx-11 mt-14'>
+            {                
                 filteredAgents.map( agent => {                    
                     return(
                         <Agent key={agent.uuid} agent={agent}/>
