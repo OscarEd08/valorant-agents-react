@@ -11,7 +11,7 @@ function Filter(props) {
   .filter((name, index, arr) => arr.indexOf(name) === index);
   
   return (
-    <div className="grid grid-cols-3 sm:grid-cols-5 my-10 mx-10 place-items-center gap-4 sm:gap-8 lg:gap-10 xl:gap-28 2xl:gap-40">
+    <div className="grid grid-cols-3 sm:grid-cols-5 my-10 mx-10 place-items-center gap-x-16 gap-y-5 sm:gap-8 lg:gap-10 xl:gap-28 2xl:gap-40">
       {nameRoles.map((role, index) => (
         <button key={index} onClick={() => handleRoleSelect(role)} 
         className={`text-sm md:text-base py-3 w-28 lg:w-44 lg:py-4 font-semibold rounded-full border hover:text-white hover:bg-gray-800 dark:text-white dark:hover:bg-gray-900 hover:border-transparent focus:outline-none ${selectedRole === role ? 'bg-gray-800 border-gray-800 text-white dark:bg-gray-900 dark:border-gray-900'  : 'text-gray-800 border-gray-200'}
