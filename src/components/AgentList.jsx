@@ -27,7 +27,7 @@ function AgentList(){
     .filter(agent => {
         return (
             (selectedRole === '' || agent.role.displayName === selectedRole) &&
-            agent.displayName.toLowerCase().includes(searchAgent.toLowerCase())
+            agent.displayName.toLowerCase().includes(searchAgent.replace(/\s/g, '').toLowerCase())
           );
     });   
 
