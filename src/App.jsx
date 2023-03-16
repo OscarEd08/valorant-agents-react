@@ -3,7 +3,7 @@ import AgentList from './components/AgentList';
 import DarkModeToggle from './components/DarkModeToggle';
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
     isDarkMode ? document.body.classList.add("dark") : document.body.classList.remove("dark");    
