@@ -5,19 +5,15 @@ import ModalAgent from './ModalAgent';
 function Agent({agent}){          
     const [showModalAgent, setShowModalAgent,] = useState(false);
     
-
     const toggleModal = () => setShowModalAgent(!showModalAgent);
-
-    const relativeClass = showModalAgent ? 'relative' : '';
-    const absoluteClass = showModalAgent ? 'absolute' : '';
 
     return(            
         <div className='card dark:bg-background'>
             <div className='flex justify-center'>
-                <button onClick={toggleModal} >
-                    <div className={`${relativeClass}`}>
+                <button onClick={toggleModal}>
+                    <div className="static">
                         <img className='rounded-full h-48 w-48 sm:h-60 sm:w-60' src={agent.displayIconSmall} alt={agent.displayName}/>                                        
-                        <img className= {`${absoluteClass} bottom-0 right-0 rounded-full h-14 w-14 sm:h-16 sm:w-16 bg-slate-900 border-4 border-slate-900`} src={agent.role.displayIcon} alt={agent.role.displayName}/>                                        
+                        <img className= "inline-block ml-36 -mt-16 sm:ml-44 rounded-full h-14 w-14 sm:h-16 sm:w-16 bg-slate-900 border-4 border-slate-900" src={agent.role.displayIcon} alt={agent.role.displayName}/>                                        
                     </div>
                 </button>
             </div>             
@@ -26,7 +22,7 @@ function Agent({agent}){
             <Ability ability={agent.abilities} />
             {
             showModalAgent && (                
-                <ModalAgent agent={agent}/>
+                <ModalAgent agent={agent} toggleModal={toggleModal}/>
             )}    
         </div>
         
