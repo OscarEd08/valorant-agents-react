@@ -34,7 +34,7 @@ function ModalAgent(props) {
     const {agent,toggleModal} = props;
 
     return (  
-        <div className="fixed inset-0 z-40 bg-black bg-opacity-25 flex items-center justify-center">
+        <div className="fixed inset-0 z-40 bg-black bg-opacity-25 backdrop-blur-sm flex items-center justify-center">
             <div className="card-large dark:bg-background relative">
                 <div className="flex justify-between">
                     <div className="z-10 text-black dark:text-white font-bold">
