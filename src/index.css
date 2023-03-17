@@ -19,6 +19,13 @@
       box-shadow: theme('boxShadow.xl');
     }
     
+    .card-large {
+      background-color: theme('colors.white');
+      border-radius: theme('borderRadius.3xl');
+      padding: theme('spacing.8');
+      margin-bottom: theme('spacing.10');
+      box-shadow: theme('boxShadow.xl');
+    }
     
   }
 
