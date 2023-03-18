@@ -12,7 +12,7 @@ function AbilityModal(props){
     })
     
     return(
-        <div className="flex flex-col md:flex-row mt-14 md:mt-0 md:-ml-28 items-center justify-center z-10">
+        <div className="flex flex-col md:flex-row mt-12 md:mt-0 md:-ml-28 items-center justify-center z-10">
             <div className="flex flex-row md:flex-col">
                 {props.ability.map((ability)=> {
                     return(
@@ -56,8 +56,8 @@ function ModalAgent(props) {
                 </div>
                 <div className="flex flex-col md:flex-row items-center justify-center static">
                 <div className="relative md:-ml-16 -mb-10">
-                    <img src={agent.background} className="h-[400px] w-[400px] -mt-20 mb-2 md:h-[350px] md:w-[350px] md:mr-20 md:-mt-20 md:mb-5  xl:h-[500px] xl:w-[500px] xl:mr-32 xl:-mt-32 xl:-mb-16 invert-[0.70] dark:invert-[0.3] " />
-                    <img src={agent.fullPortrait} alt={agent.displayName} className="bottom-2 h-[450px] w-[450px] md:-mb-0 md:bottom-0 md:right-10 xl:h-[630px] xl:w-[630px] absolute xl:-mb-12 xl:-bottom-10 xl:right-14"/>
+                    <img src={agent.background} className="h-[400px] w-[450px] -mt-20 mb-2 md:h-[350px] md:w-[350px] md:mr-20 md:-mt-20 md:mb-5  xl:h-[500px] xl:w-[500px] xl:mr-32 xl:-mt-32 xl:-mb-16 invert-[0.70] dark:invert-[0.3] " />
+                    <img src={agent.fullPortrait} alt={agent.displayName} className="bottom-2 w-[500px] h-[450px] md:w-[450px] md:-mb-0 md:bottom-0 md:right-10 xl:h-[630px] xl:w-[630px] absolute xl:-mb-12 xl:-bottom-10 xl:right-14"/>
                 </div>
 
                     <AbilityModal ability={agent.abilities} />
