@@ -12,14 +12,14 @@ function AbilityModal(props){
     })
     
     return(
-        <div className="flex flex-row -ml-28 items-center justify-center z-10">
-        <div className="flex flex-col">
+        <div className="flex flex-col md:flex-row mt-8 md:-ml-28 items-center justify-center z-10">
+        <div className="flex flex-row md:flex-col">
             {props.ability.map((ability)=> {
                 return(
                     ability.displayIcon && (
                         <div key={ability.slot} >
                             <button onClick={() => handleAbility(ability.description, ability.displayName)}>
-                                <img className={`mx-4 p-1 rounded-full w-10 h-10 sm:h-14 sm:w-14 
+                                <img className={`mx-2 md:mx-4 p-1 rounded-full w-10 h-10 md:h-14 md:w-14 
                                     ${selectedAbility.description === ability.description && selectedAbility.name === ability.displayName? "bg-neutral-800 dark:bg-neutral-900" : "invert-[0.85] dark:invert-0"}`}
                                     src={ability.displayIcon} alt={ability.displayName}/>                            
                             </button>                                                    
@@ -30,8 +30,8 @@ function AbilityModal(props){
             
         </div>
         <div className="text-justify mx-14 w-56 static">
-            <p className="text-xl -mx-7 mb-3 font-extrabold">{selectedAbility.name}</p>
-            <p className="text-sm -mx-7 ">{selectedAbility.description}</p>
+            <p className="text-lg sm:text-sm my-2 text-center md:text-left md:text-xl md:-mx-7 md:mb-3 font-extrabold">{selectedAbility.name}</p>
+            <p className="text-[12px] sm:text-[11px] -mx-12 sm:-mx-16 md:text-sm md:-mx-7 ">{selectedAbility.description}</p>
         </div>        
         </div>
     )
@@ -43,21 +43,21 @@ function ModalAgent(props) {
     return (  
         <div className="fixed inset-0 z-40 bg-black bg-opacity-25 backdrop-blur-sm flex items-center justify-center">
             <div className="card-large dark:bg-background relative">
-                <div className="flex justify-between">
-                    <div className="z-10 ml-[480px] mb-4 text-black dark:text-white font-bold">
-                        <h1 className=" text-4xl">{agent.displayName}</h1>
+                <div className="flex justify-between relative">
+                    <div className="z-10 ml-4 md:ml-[280px] xl:ml-[480px] mb-4 text-black dark:text-white font-bold">
+                        <h1 className="text-3xl  xl:text-4xl">{agent.displayName}</h1>
                         <h2 >{agent.role.displayName}</h2>
                     </div>
-                    <button onClick={toggleModal} className="-mt-28 z-50">
+                    <button onClick={toggleModal} className="absolute right-0 lg:-rigth-10 xl:right-0 xl:bottom-20 z-50">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                         </svg>
                     </button>
                 </div>
-                <div className="flex flex-row items-center justify-center static">
-                <div className="relative -ml-16 -mb-10">
-                    <img src={agent.background} className=" h-[500px] w-[500px] mr-32 -mt-32 -mb-16 invert-[0.70] dark:invert-[0.3] " />
-                    <img src={agent.fullPortrait} alt={agent.displayName} className="h-[630px] w-[630px] absolute -mb-12 -bottom-10 right-14"/>
+                <div className="flex flex-col md:flex-row items-center justify-center static">
+                <div className="relative md:-ml-16 -mb-10">
+                    <img src={agent.background} className="h-52 w-52 -mt-16 mb-2 md:h-[350px] md:w-[350px] md:mr-20 md:-mt-20 md:mb-5  xl:h-[500px] xl:w-[500px] xl:mr-32 xl:-mt-32 xl:-mb-16 invert-[0.70] dark:invert-[0.3] " />
+                    <img src={agent.fullPortrait} alt={agent.displayName} className="w-60 h-60 bottom-2 md:h-[450px] md:w-[450px] md:-mb-0 md:bottom-0 md:right-10 xl:h-[630px] xl:w-[630px] absolute xl:-mb-12 xl:-bottom-10 xl:right-14"/>
                 </div>
 
                     <AbilityModal ability={agent.abilities} />

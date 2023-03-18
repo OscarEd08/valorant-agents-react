@@ -23,10 +23,46 @@
       background-color: theme('colors.white');
       border-radius: theme('borderRadius.3xl');
       padding: theme('spacing.16');
-      margin-bottom: theme('spacing.10');
       box-shadow: theme('boxShadow.xl');
     }
     
+    @media (max-width: 1279px) {
+      .card-large {
+        padding-top: theme('spacing.4');
+        padding-bottom: theme('spacing.4');
+        padding-left: theme('spacing.20');
+        padding-right: theme('spacing.20');
+      }
+      
+    @media (max-width: 1024px){
+      .card-large{
+        padding-left: theme('spacing.8');
+        padding-right: theme('spacing.8');
+      }
+    }
+
+    @media (max-width: 768px){
+      .card-large{
+        height: 450px;
+        padding-left: theme('spacing.8');
+        padding-right: theme('spacing.8');
+      }
+    }
+
+    @media (max-width: 640px){
+      .card-large{
+        height: 100%;
+        width: 100%;
+        border-radius: theme('borderRadius.none');
+        padding-left: theme('spacing.5');
+        padding-right: theme('spacing.5');
+      }
+    }
+
+    }
+    
+    
+
   }
 
 html.dark{
