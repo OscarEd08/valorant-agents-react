@@ -2,10 +2,15 @@ import { useState } from "react";
 import VoiceAgent from "./VoiceAgent";
 
 function AbilityModal(props){
-    const [selectedAbility, setSelectedAbility] = useState(props.ability[0].description);
+    const [selectedAbility, setSelectedAbility] = useState({
+        description: props.ability[0].description,
+        name: props.ability[0].displayName
+    });
 
-    const handleAbility = (abilityDescription) => setSelectedAbility(abilityDescription)
-
+    const handleAbility = (abilityDescription, abilityName) => setSelectedAbility({
+        description: abilityDescription, name: abilityName
+    })
+    
     return(
         <div className="flex flex-row -ml-28 -mt-10 items-center justify-center z-10">
         <div className="flex flex-col">
@@ -13,9 +18,9 @@ function AbilityModal(props){
                 return(
                     ability.displayIcon && (
                         <div key={ability.slot} >
-                            <button onClick={() => handleAbility(ability.description)}>
+                            <button onClick={() => handleAbility(ability.description, ability.displayName)}>
                                 <img className={`mx-4 p-1 rounded-full w-10 h-10 sm:h-14 sm:w-14 
-                                    ${selectedAbility === ability.description ? "bg-neutral-800 dark:bg-neutral-900" : "invert-[0.85] dark:invert-0"}`}
+                                    ${selectedAbility.description === ability.description && selectedAbility.name === ability.displayName? "bg-neutral-800 dark:bg-neutral-900" : "invert-[0.85] dark:invert-0"}`}
                                     src={ability.displayIcon} alt={ability.displayName}/>                            
                             </button>                                                    
                         </div>
@@ -25,7 +30,8 @@ function AbilityModal(props){
             
         </div>
         <div className="text-justify mx-14 w-56 static">
-            <p className="text-sm -mx-7 ">{selectedAbility}</p>
+            <p className="text-xl -mx-7 mb-3 font-extrabold">{selectedAbility.name}</p>
+            <p className="text-sm -mx-7 ">{selectedAbility.description}</p>
         </div>        
         </div>
     )
