@@ -12,7 +12,7 @@ function AbilityModal(props){
     })
     
     return(
-        <div className="flex flex-row -ml-28 -mt-10 items-center justify-center z-10">
+        <div className="flex flex-row -ml-36 items-center justify-center z-10">
         <div className="flex flex-col">
             {props.ability.map((ability)=> {
                 return(
@@ -44,7 +44,7 @@ function ModalAgent(props) {
         <div className="fixed inset-0 z-40 bg-black bg-opacity-25 backdrop-blur-sm flex items-center justify-center">
             <div className="card-large dark:bg-background relative">
                 <div className="flex justify-between">
-                    <div className="z-10 text-black dark:text-white font-bold">
+                    <div className="z-10 ml-[340px] text-black dark:text-white font-bold">
                         <h1 className=" text-4xl">{agent.displayName}</h1>
                         <h2 >{agent.role.displayName}</h2>
                     </div>
@@ -55,9 +55,9 @@ function ModalAgent(props) {
                     </button>
                 </div>
                 <div className="flex flex-row items-center justify-center static">
-                <div className="relative ml-7 -mb-10">
-                    <img src={agent.background} className=" h-[300px] mr-32 mt-2 invert-[0.70] dark:invert-[0.3] " />
-                    <img src={agent.fullPortrait} alt={agent.displayName} className="h-[340px] absolute bottom-7 right-14"/>
+                <div className="relative -ml-16 -mb-10">
+                    <img src={agent.background} className=" h-[500px] w-[400px] mr-32 -mt-24 -mb-10 invert-[0.70] dark:invert-[0.3] " />
+                    <img src={agent.fullPortrait} alt={agent.displayName} className="h-[600px] w-[600px] absolute -mb-6 -bottom-10 right-14"/>
                 </div>
 
                     <AbilityModal ability={agent.abilities} />
