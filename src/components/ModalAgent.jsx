@@ -7,9 +7,15 @@ function AbilityModal(props){
         name: props.ability[0].displayName
     });
 
-    const handleAbility = (abilityDescription, abilityName) => setSelectedAbility({
-        description: abilityDescription, name: abilityName
-    })
+    const [showText, setShowText] = useState(false);
+
+    const handleAbility = (abilityDescription, abilityName) => {
+        setSelectedAbility({description: abilityDescription, name: abilityName})
+        setShowText(false)
+    }
+    
+
+    
     
     return(
         <div className="flex flex-col md:flex-row mt-12 md:mt-0 md:-ml-28 items-center justify-center z-10">
@@ -31,7 +37,37 @@ function AbilityModal(props){
             </div>
             <div className="text-justify mx-14 w-56 static">
                 <p className="text-lg sm:text-sm my-2 text-center md:text-left md:text-xl md:-mx-7 md:mb-3 font-extrabold">{selectedAbility.name}</p>
-                <p className="text-[12px] sm:text-[11px] -mx-12 sm:-mx-16 md:text-sm md:-mx-7 ">{selectedAbility.description}</p>
+                    {selectedAbility.description.length <= 150?
+                        <p className="text-[12px] sm:text-[11px] -mx-12 sm:-mx-16 md:text-sm md:-mx-7 ">{selectedAbility.description}</p>
+                        :
+                        <p className="text-[12px] sm:text-[11px] -mx-12 sm:-mx-16 md:text-sm md:-mx-7 ">{selectedAbility.description.slice(0,150)}
+                            <p className={`${showText? "inline": "hidden"}`}>{selectedAbility.description.slice(100)}</p>            
+                            <div className="grid justify-items-center">
+                            <button   
+                                className="mt-5"                              
+                                onClick={() => setShowText(!showText)}
+                            >{showText?       
+                                <div className="grid justify-items-center">                                
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l7.5-7.5 7.5 7.5m-15 6l7.5-7.5 7.5 7.5" />
+                                </svg> 
+                                <p className="font-black text-[10px] tracking-widest">SHOW LESS</p>                      
+                                </div>                                             
+                                :
+                                <div className="grid justify-items-center">
+                                <p className="font-black text-[10px] tracking-widest">SHOW MORE</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 5.25l-7.5 7.5-7.5-7.5m15 6l-7.5 7.5-7.5-7.5" />
+                                </svg>
+                                </div>
+                                } 
+                            </button>    
+                            </div>
+                        </p>    
+                    }
+                
+                            
+                
             </div>        
         </div>
     )
@@ -56,8 +92,8 @@ function ModalAgent(props) {
                 </div>
                 <div className="flex flex-col md:flex-row items-center justify-center static">
                 <div className="relative md:-ml-16 -mb-10">
-                    <img src={agent.background} className="h-[400px] w-[450px] -mt-20 mb-2 md:h-[350px] md:w-[350px] md:mr-20 md:-mt-20 md:mb-5  xl:h-[500px] xl:w-[500px] xl:mr-32 xl:-mt-32 xl:-mb-16 invert-[0.70] dark:invert-[0.3] " />
-                    <img src={agent.fullPortrait} alt={agent.displayName} className="bottom-2 w-[500px] h-[450px] md:w-[450px] md:-mb-0 md:bottom-0 md:right-10 xl:h-[630px] xl:w-[630px] absolute xl:-mb-12 xl:-bottom-10 xl:right-14"/>
+                    <img src={agent.background} className="h-[450px] w-[550px] -mt-20 mb-2 md:h-[350px] md:w-[350px] md:mr-20 md:-mt-20 md:mb-5  xl:h-[500px] xl:w-[500px] xl:mr-32 xl:-mt-32 xl:-mb-16 invert-[0.70] dark:invert-[0.3] " />
+                    <img src={agent.fullPortrait} alt={agent.displayName} className="bottom-2 w-[500px] h-[470px] md:w-[450px] md:-mb-0 md:bottom-0 md:right-10 xl:h-[630px] xl:w-[630px] absolute xl:-mb-12 xl:-bottom-10 xl:right-14"/>
                 </div>
 
                     <AbilityModal ability={agent.abilities} />
