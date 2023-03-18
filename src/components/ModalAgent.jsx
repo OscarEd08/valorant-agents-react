@@ -44,11 +44,11 @@ function ModalAgent(props) {
         <div className="fixed inset-0 z-40 bg-black bg-opacity-25 backdrop-blur-sm flex items-center justify-center">
             <div className="card-large dark:bg-background relative">
                 <div className="flex justify-between">
-                    <div className="z-10 ml-[480px] text-black dark:text-white font-bold">
+                    <div className="z-10 ml-[480px] mb-4 text-black dark:text-white font-bold">
                         <h1 className=" text-4xl">{agent.displayName}</h1>
                         <h2 >{agent.role.displayName}</h2>
                     </div>
-                    <button onClick={toggleModal} className="-mt-5 z-50">
+                    <button onClick={toggleModal} className="-mt-28 z-50">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                         </svg>

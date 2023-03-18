@@ -13,7 +13,7 @@ function VoiceAgent({ voiceAgent }) {
   const handleEnded = () => setIsPlaying(false);
 
   return (
-    <div className="absolute bottom-7 right-7 z-50">
+    <div className="absolute bottom-7 right-16 z-50">
       <audio ref={audioRef} src={voiceAgent} onEnded={handleEnded} />
       <button onClick={handlePlayPause}>
         {
