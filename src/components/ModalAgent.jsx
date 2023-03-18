@@ -41,10 +41,9 @@ function AbilityModal(props){
                         <p className="text-[12px] sm:text-[11px] -mx-12 sm:-mx-16 md:text-sm md:-mx-7 ">{selectedAbility.description}</p>
                         :
                         <p className="text-[12px] sm:text-[11px] -mx-12 sm:-mx-16 md:text-sm md:-mx-7 ">{selectedAbility.description.slice(0,150)}
-                            <p className={`${showText? "inline": "hidden"}`}>{selectedAbility.description.slice(100)}</p>            
-                            <div className="grid justify-items-center">
-                            <button   
-                                className="mt-5"                              
+                            <p className={`${showText? "inline": "hidden"}`}>{selectedAbility.description.slice(150)}</p>            
+                            <div className="grid justify-items-center mt-5">
+                            <button       
                                 onClick={() => setShowText(!showText)}
                             >{showText?       
                                 <div className="grid justify-items-center">                                
@@ -92,8 +91,8 @@ function ModalAgent(props) {
                 </div>
                 <div className="flex flex-col md:flex-row items-center justify-center static">
                 <div className="relative md:-ml-16 -mb-10">
-                    <img src={agent.background} className="h-[450px] w-[550px] -mt-20 mb-2 md:h-[350px] md:w-[350px] md:mr-20 md:-mt-20 md:mb-5  xl:h-[500px] xl:w-[500px] xl:mr-32 xl:-mt-32 xl:-mb-16 invert-[0.70] dark:invert-[0.3] " />
-                    <img src={agent.fullPortrait} alt={agent.displayName} className="bottom-2 w-[500px] h-[470px] md:w-[450px] md:-mb-0 md:bottom-0 md:right-10 xl:h-[630px] xl:w-[630px] absolute xl:-mb-12 xl:-bottom-10 xl:right-14"/>
+                    <img src={agent.background} className="h-[300px] w-[400px] md:h-[350px] md:w-[350px] md:mr-20 md:-mt-20 md:mb-5  xl:h-[500px] xl:w-[500px] xl:mr-32 xl:-mt-32 xl:-mb-16 invert-[0.70] dark:invert-[0.3] " />
+                    <img src={agent.fullPortrait} alt={agent.displayName} className="bottom-2 w-[400px] h-[370px] md:w-[450px] md:-mb-0 md:bottom-0 md:right-10 xl:h-[630px] xl:w-[630px] absolute xl:-mb-12 xl:-bottom-10 xl:right-14"/>
                 </div>
 
                     <AbilityModal ability={agent.abilities} />
