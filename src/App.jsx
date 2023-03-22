@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import AgentList from './components/AgentList';
+import Page from './components/Page';
 import DarkModeToggle from './components/DarkModeToggle';
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
   return(
     <div>
       <DarkModeToggle setIsDarkMode={setIsDarkMode} isDarkMode={isDarkMode}/>
-      <AgentList/>
+      <Page/>
     </div>
   )
 }
