@@ -25,16 +25,17 @@
   overflow: hidden;
   position: absolute;
   transform: translateX(-50%);
-  transition: transform 300ms cubic-bezier(0.4, 0.0, 0.2, 1);;
+  transition: transform 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
   width: 125px;
-  padding-top: 20px;
+  padding-top: 18px;
 }
 
 /*Esta propiedad va a permitir que se despliegue de manera animada un 
 background para el contenedor los idiomas*/
 .drop{
   position: absolute;
-  margin-left: 22px;
+  margin-top: -17px;
+  margin-left: 23px;
   background: #fff;
   transition: transform 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
   height: 5px;  
@@ -42,43 +43,22 @@ background para el contenedor los idiomas*/
 }
 
 .drop-active{
-  transform: translateY(140px) scale(57);  
+  transform: translateY(157px) scale(57);  
 }
 
 @media (max-width: 460px){
   .cut {
-    clip-path: polygon(79.94543% 0%, 78.146605% 0.56499168%, 76.908524% 1.8619327%, 75.53612% 3.2937721%, 74.334324% 4.2634587%, 73.449473% 4.6785326%, 72.75% 4.8902239%, 72.123985% 4.967017%, 71.459505% 4.9773959%, 
-      61.434877% 4.9773959%, 51.41025% 4.9773959%, 41.385622% 4.9773959%, 
-      31.3609941% 4.9773959%, 30.7494639% 5.0755373%, 29.9648305% 5.3952797%, 
-      29.28803037% 5.9746007%, 29% 6.8514776%, 29% 29.608196%, 29% 52.364914%, 
-      29% 75.121632%, 29% 97.87835%, 29.17916238% 98.658483%, 29.67451585% 99.313006%, 
-      30.4228599% 99.763343%, 31.3609941% 99.930917%, 54.989505% 99.930917%, 
-      78.618015% 99.930917%, 102.246526% 99.930917%, 125.875036% 99.930917%, 
-      126.979739% 99.839309%, 127.960507% 99.515581%, 128.662509% 98.886379%, 
-      128.930917% 97.87835%, 128.930917% 75.233185%, 128.930917% 52.588019%, 
-      128.930917% 29.942854%, 128.930917% 7.2976888%, 128.75287% 6.3432143%, 
-      128.283323% 5.6113835%, 127.619164% 5.1426321%, 126.857283% 4.9773959%, 
-      116.768866% 4.9773959%, 106.680448% 4.9773959%, 96.592031% 4.9773959%, 
-      86.503614% 4.9773959%, 85.936197% 4.9640164%, 85.17412% 4.8766449%, 
-      84.305914% 4.6444314%, 83.420113% 4.1965263%, 82.323874% 3.214925%, 
-      80.989005% 1.8085795%, 79.75102% 0.54707587%
-    )}
-
+    clip-path: none;
+  }
   .lang-menu{
-    left:8%;    
+    left:-45%;    
     padding-top: 9px;
   }
-  .drop{
-    width: 3px;
-    margin-left: -18px;
-    height: 5.3px;
+  .drop{    
+    border-radius: 6%;
   }
   .drop-active{
-    transform: translateY(115px) scale(46);  
-  }
-  .fade-in{
-    font-size: 12px;
-    padding: 8px 0 8px 0;
+    margin-left: -25px;    
   }
 }
 
@@ -96,8 +76,6 @@ background para el contenedor los idiomas*/
   animation: fade-in 0.7s ease-in-out forwards;
   opacity: 0;
 }
-
-
 
 @layer components {
     .card {

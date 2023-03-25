@@ -30,10 +30,10 @@ function Language(props) {
           />
         </svg>
       </button>
-      <div className={`${showMenu? 'drop drop-active cut ':''}`}></div>
+      <div className={`drop ${showMenu? 'drop-active cut':''}`}></div>
       {/* Usamos "short-circuit-evaluation" para desplegar el menu */}
-      {showMenu && (
-          <div className="lang-menu">          
+      {showMenu && (        
+          <div className="lang-menu fade-in">          
           <div
             role="menu"
             aria-orientation="vertical"
@@ -43,7 +43,7 @@ function Language(props) {
               <button
                 key={lang.id}
                 onClick={() => changeLanguage(lang.code)}
-                className="fade-in block px-5 py-3 text-sm font-semibold text-gray-500 hover:text-gray-900"
+                className="block px-5 py-3 text-sm font-semibold text-gray-500 hover:text-gray-900"
                 role="menuitem"            
               >
                 {lang.name} ({lang.code.substring(lang.code.length - 2)})
