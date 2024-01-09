@@ -77,6 +77,8 @@ background para el contenedor los idiomas*/
   opacity: 0;
 }
 
+/*ANIMATION FILTERS BUTTONS*/
+
 @layer components {
     .card {
       background-color: theme('colors.white');

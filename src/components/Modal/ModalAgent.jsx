@@ -50,7 +50,7 @@ function ModalAgent(props) {
 
           <AbilityModal ability={abilities} />
         </div>
-        <VoiceAgent voiceAgent={voiceLine.mediaList[0].wave} />
+        <VoiceAgent voiceAgent={voiceLine?.mediaList[0]?.wave} />
       </div>
     </div>
   );
